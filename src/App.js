@@ -5,6 +5,8 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import { BrowserRouter as Router, Route , Routes} from "react-router-dom";
 import Result from './components/results/results'
+import AddForm from "./components/add-form/add-form";
+
 function App() {
   return (
     <Router>
@@ -19,15 +21,17 @@ function App() {
         <Nav style={{ marginLeft: "70%" }}>
         <Nav.Link href="/">Search</Nav.Link>
           <Nav.Link  style={{ marginLeft: "30px" }}  href="History">History</Nav.Link>
-          <Nav.Link style={{ marginLeft: "30px" }} href="about">
+          {/* <Nav.Link style={{ marginLeft: "30px" }} href="about">
             About
-          </Nav.Link>
+          </Nav.Link> */}
+          <Nav.Link  style={{ marginLeft: "30px" }}  href="forms">FORMS</Nav.Link>
         </Nav>
       </Navbar>
       <Routes>
       <Route exact path="/" element={<Home/>} />
       <Route exact path="about" element={<About/>} />
       <Route exact path="history" element={<Result/>} />
+      <Route exact path="forms" element={<AddForm/>} />
       </Routes>
     </Router>
   );
