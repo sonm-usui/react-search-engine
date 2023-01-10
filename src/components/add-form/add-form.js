@@ -5,16 +5,15 @@ const AddForm = () => {
 
     const focusOnerror = () => createDecorator();
 
+    //Testing react final form with decorators
   const handleForm = (values) => {
-    //submit
+    //submit the form
   };
   return (
     <div>
       <h1>FORMS</h1>
       <Form
-        onSubmit={handleForm}
-        // initialValues={{ first_name: "sonam", last_name: "choeda" }}
-      >
+        onSubmit={handleForm} >
         {({ handleSubmit, submitting, values }) => (
           <form onSubmit={handleSubmit} decorator={{focusOnerror}}>
             <div>
@@ -45,11 +44,9 @@ const AddForm = () => {
                 )}
               </Field>
             </div>
-            <div>{submitting}</div>
             <button type="submit" disabled={submitting}>
               submit
             </button>
-            <pre>{JSON.stringify(values, undefined, 2)}</pre>
           </form>
         )}
       </Form>
